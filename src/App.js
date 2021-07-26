@@ -2,7 +2,7 @@ import './App.css';
 import Navbar from './components/Navbar.jsx'
 import NewAccount from './components/NewAccount.jsx'
 import LandingPage from './components/LandingPage.jsx'
-import Welcome from './components/Welcome.jsx'
+import Login from './components/Login.jsx'
 
 import {
   BrowserRouter as Router,
@@ -56,7 +56,7 @@ function App() {
         <Switch>
           <Route 
             exact path="/"
-            render={ props => <Welcome {...props} currentUser={ currentUser } setCurrentUser={ setCurrentUser }/> }
+            render={ props => <Login {...props} currentUser={ currentUser } setCurrentUser={ setCurrentUser }/> }
           />
 
           <Route 
