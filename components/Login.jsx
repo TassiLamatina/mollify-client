@@ -5,7 +5,7 @@ import { Redirect, Link } from 'react-router-dom'
 
 import { useState } from 'react'
 
-export default function Welcome(props) {
+export default function Login(props) {
 
     // state for the controlled from  
     const [email, setEmail] = useState('')
