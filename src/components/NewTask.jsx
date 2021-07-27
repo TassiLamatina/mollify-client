@@ -20,10 +20,10 @@ export default function NewTask(props) {
                 <Form.Control as="textarea" rows={3} value={props.notes} onChange={(e) => props.setNotes(e.target.value)} placeholder="Notes"/>
             </Form.Group>
 
-            <div className="add-date">
-                <label className="mb-2 px-1"id="calendar" htmlFor="start">Added on:</label>
-                <input className="mb-2" type="date" id="start" name="trip-start"
-                    value={props.dateApplied} onChange={(e) => props.setDateApplied(e.target.value)} 
+            <div className="apply-date">
+                <label className="mb-1 px-1"id="calendar" htmlFor="added">Added on:</label>
+                <input className="mb-2" type="date" id="added" name="added"
+                    value={props.dateAdded} onChange={(e) => props.setDateAdded(e.target.value)} 
                     min="2018-01-01" max="2035-12-31"/>  
             </div>        
             

@@ -23,7 +23,7 @@ export default function Login(props) {
             password: password
           }
           console.log('my server url:', process.env.REACT_APP_SERVER_URL)
-          const response = await axios.post(`${process.env.REACT_APP_SERVER_URL}/users/login`, requestBody)
+          const response = await axios.post(`${process.env.REACT_APP_SERVER_URL}/api-v1/users/login `, requestBody)
           
           console.log(response)
           // destructure the response

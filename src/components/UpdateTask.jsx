@@ -33,7 +33,7 @@ export default function UpdateTask(props) {
                 <Form.Label>Status:</Form.Label>
                 <Form.Control as="select" value={props.status} onChange={(e) => props.setStatus(e.target.value)}>
                     <option>Incomplete</option>
-                    <option>Done</option>
+                    <option>Complete</option>
                 </Form.Control> 
             </Form.Group>
             <div className="create-btn">

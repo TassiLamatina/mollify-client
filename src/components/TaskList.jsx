@@ -4,13 +4,13 @@ import styled from "styled-components";
 const PrioritySpan = styled.div`
 background-color: ${props => {
   if(props.priority === "High"){
-    return "#F97272"
+    return "#6B6C9E"
   }
   else if(props.priority === "Medium"){
-     return "#F9F372"
+     return "#775D83"
   }
      else if(props.priority === "Low"){
-     return "#9DF972"
+     return "#99A1A6"
      }
      else{
        return "white"
@@ -22,7 +22,6 @@ background-color: ${props => {
 
 const TaskList = (props) => {
     // render each task from TaskList.js
-    console.log(props)
     const renderedTasks = props.taskData.map(task => {
         return(
             <li key={`${task._id}`}>

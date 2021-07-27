@@ -12,7 +12,7 @@ import NewTask from './NewTask'
 import UpdateTask from './UpdateTask'
 
 export default function LandingPage(props) {
-    console.log(props)
+    // console.log(props)
     // state is information from the server
     const [filter,setFilter] = useState(null)
     const [taskList,setTaskList] = useState([])
@@ -41,9 +41,9 @@ export default function LandingPage(props) {
                 }
 
                 // hit the auth locked endpoint
-                const response = await axios.get(`${process.env.REACT_APP_SERVER_URL}/users/tasks`, { headers: authHeaders })
+                const response = await axios.get(`${process.env.REACT_APP_SERVER_URL}/api-v1/users/tasks`, { headers: authHeaders })
                 // set state with the data from the server
-                console.log(`${response} 🍎`)
+                // console.log(`${response} 🍎`)
                 setTaskList(response.data[0].tasks)
                 setFilteredTaskList(response.data[0].tasks)
     
@@ -99,10 +99,11 @@ export default function LandingPage(props) {
                 Authorization: token
             }
             // hit the auth locked endpoint
-            const response = await axios.post(`${process.env.REACT_APP_SERVER_URL}/task`, {task: newTask}, { headers: authHeaders})
+            const response = await axios.post(`${process.env.REACT_APP_SERVER_URL}/api-v1/users/tasks`, {task: newTask}, { headers: authHeaders})
 
             // add to state taskList
-            setTaskList([...taskList, response.data.task])
+            console.log(response.data)
+            setTaskList([...taskList, response.data.task])  
             // update filters and action
             setAction('view')
             setFilter(response.data.task.status)
@@ -139,7 +140,7 @@ export default function LandingPage(props) {
                 Authorization: token
             }
             // hit the auth locked endpoint
-            const response = await axios.put(`${process.env.REACT_APP_SERVER_URL}/tasks`, {task: selected }, { headers: authHeaders})
+            const response = await axios.put(`${process.env.REACT_APP_SERVER_URL}/api-v1/users/tasks`, {task: selected }, { headers: authHeaders})
 
             // set filter to current status
             setAction('view')
@@ -168,7 +169,7 @@ export default function LandingPage(props) {
                 Authorization: token
             }
             // hit the auth locked endpoint
-            const response = await axios.delete(`${process.env.REACT_APP_SERVER_URL}/tasks`, { headers: authHeaders , data: {taskId: selected._id }})
+            const response = await axios.delete(`${process.env.REACT_APP_SERVER_URL}/api-v1/users/tasks`, { headers: authHeaders , data: {taskId: selected._id }})
 
             // remove task in state
             let i = taskList.findIndex(task => task._id === selected._id)
