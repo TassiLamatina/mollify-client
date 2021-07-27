@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import{ Navbar, Col }from 'react-bootstrap'
 
-export default function Navbar(props) {
+export default function NavigationBar(props) {
     // if the user is logged in
     const loggedIn = (
         <>

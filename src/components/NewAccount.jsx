@@ -2,7 +2,7 @@ import { useState } from 'react'
 import axios from 'axios'
 import jwt from 'jsonwebtoken'
 import { Redirect, Link } from 'react-router-dom'
-import Profile from './Profile.jsx'
+import LandingPage from './LandingPage.jsx'
 
 export default function Register(props) {
   // state for the controlled from
@@ -50,7 +50,7 @@ export default function Register(props) {
   }
 
   // redirect if the user is logged in
-if(props.currentUser) return <Redirect to='/profile' component={ Profile } currentUser={ props.currentUser} />
+if(props.currentUser) return <Redirect to='/task' component={ LandingPage } currentUser={ props.currentUser} />
 
   return (
       <div>

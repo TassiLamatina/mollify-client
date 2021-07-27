@@ -6,12 +6,13 @@ import axios from "axios"
 // Components
 import Login from "./Login"
 import TaskList from './TaskList'
-import Menubar from './Menubar'
+import Menu from './Menu'
 import TaskDetail from "./TaskDetail"
 import NewTask from './NewTask'
 import UpdateTask from './UpdateTask'
 
 export default function LandingPage(props) {
+    console.log(props)
     // state is information from the server
     const [filter,setFilter] = useState(null)
     const [taskList,setTaskList] = useState([])
@@ -42,8 +43,8 @@ export default function LandingPage(props) {
                 // hit the auth locked endpoint
                 const response = await axios.get(`${process.env.REACT_APP_SERVER_URL}/api-v1/tasks`, { headers: authHeaders })
                 // set state with the data from the server
-                setTaskList(response.data.tasks)
-                setFilteredTaskList(response.data.tasks)
+                setTaskList(response.data.task)
+                setFilteredTaskList(response.data.task)
             } catch (err) {
                 console.log(err)
                 //log the user out if an error occurs
@@ -53,7 +54,7 @@ export default function LandingPage(props) {
         getUserTasks()
     }, [props])
     // redirect if there is no user in state
-    if(!props.currentUser) return <Redirect to='/' component={ Welcome } currentUser={ props.currentUser } />
+    if(!props.currentUser) return <Redirect to='/' component={ Login } currentUser={ props.currentUser } />
 
 // handlers and utils
 
@@ -249,14 +250,14 @@ export default function LandingPage(props) {
     
     return(
         <div id="LandingPage">
-            <div id="menubarLand">
+            <div id="menuLand">
                 <Row>
                     <Col md={3}>
                         <div className="create-btn">
-                            <Button id="createbtn" onClick={ showNewTaskForm }>Create New Card</Button>
+                            <Button id="createbtn" onClick={ showNewTaskForm }>Create New Task</Button>
                         </div>
-                        <div id="menubar">
-                            <Menubar handleMenuClick={ handleMenuClick } filter={filter}/>
+                        <div id="menu">
+                            <Menu handleMenuClick={ handleMenuClick } filter={filter}/>
                         </div>
                     </Col>
 
@@ -265,7 +266,7 @@ export default function LandingPage(props) {
                     </Col>
                     
                     <Col md={5} id="taskDetail">
-                        {selectedTaskane}
+                        {selectedTaskPane}
                     </Col>
                 </Row>
             </div>

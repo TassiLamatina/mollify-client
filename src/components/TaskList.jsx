@@ -22,6 +22,7 @@ background-color: ${props => {
 
 const TaskList = (props) => {
     // render each task from TaskList.js
+    console.log(props)
     const renderedTasks = props.taskData.map(task => {
         return(
             <li key={`${task._id}`}>
