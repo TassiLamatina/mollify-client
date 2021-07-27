@@ -41,10 +41,12 @@ export default function LandingPage(props) {
                 }
 
                 // hit the auth locked endpoint
-                const response = await axios.get(`${process.env.REACT_APP_SERVER_URL}/api-v1/tasks`, { headers: authHeaders })
+                const response = await axios.get(`${process.env.REACT_APP_SERVER_URL}/users/tasks`, { headers: authHeaders })
                 // set state with the data from the server
-                setTaskList(response.data.task)
-                setFilteredTaskList(response.data.task)
+                console.log(`${response} 🍎`)
+                setTaskList(response.data[0].tasks)
+                setFilteredTaskList(response.data[0].tasks)
+    
             } catch (err) {
                 console.log(err)
                 //log the user out if an error occurs
@@ -97,7 +99,7 @@ export default function LandingPage(props) {
                 Authorization: token
             }
             // hit the auth locked endpoint
-            const response = await axios.post(`${process.env.REACT_APP_SERVER_URL}/api-v1/Task`, {task: newTask}, { headers: authHeaders})
+            const response = await axios.post(`${process.env.REACT_APP_SERVER_URL}/task`, {task: newTask}, { headers: authHeaders})
 
             // add to state taskList
             setTaskList([...taskList, response.data.task])
@@ -137,7 +139,7 @@ export default function LandingPage(props) {
                 Authorization: token
             }
             // hit the auth locked endpoint
-            const response = await axios.put(`${process.env.REACT_APP_SERVER_URL}/api-v1/tasks`, {task: selected }, { headers: authHeaders})
+            const response = await axios.put(`${process.env.REACT_APP_SERVER_URL}/tasks`, {task: selected }, { headers: authHeaders})
 
             // set filter to current status
             setAction('view')
@@ -166,7 +168,7 @@ export default function LandingPage(props) {
                 Authorization: token
             }
             // hit the auth locked endpoint
-            const response = await axios.delete(`${process.env.REACT_APP_SERVER_URL}/api-v1/tasks`, { headers: authHeaders , data: {taskId: selected._id }})
+            const response = await axios.delete(`${process.env.REACT_APP_SERVER_URL}/tasks`, { headers: authHeaders , data: {taskId: selected._id }})
 
             // remove task in state
             let i = taskList.findIndex(task => task._id === selected._id)

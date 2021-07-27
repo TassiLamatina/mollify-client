@@ -8,7 +8,7 @@ import { useState } from 'react'
 export default function Login(props) {
 
     // state for the controlled from  
-    const [email, setEmail] = useState('')
+    const [email, setEmail, rememberMe] = useState('')
     const [password, setPassword] = useState('')
     // state for flash message from the server
     const [message, setMessage] = useState('')
@@ -23,7 +23,7 @@ export default function Login(props) {
             password: password
           }
           console.log('my server url:', process.env.REACT_APP_SERVER_URL)
-          const response = await axios.post(`${process.env.REACT_APP_SERVER_URL}/api-v1/users/login`, requestBody)
+          const response = await axios.post(`${process.env.REACT_APP_SERVER_URL}/users/login`, requestBody)
           
           console.log(response)
           // destructure the response
@@ -31,6 +31,8 @@ export default function Login(props) {
           
           // save the response to localstorage
           localStorage.setItem('jwtToken', token)
+          localStorage.setItem('rememberMe', 'rememberMe')
+          localStorage.setItem('email', rememberMe ? email : '')
     
           // decode the jwt token before we put it in state
           const decoded = jwt.decode(token)
@@ -47,7 +49,7 @@ export default function Login(props) {
       }
     
       if(props.currentUser) return <Redirect to='/tasks' component={ LandingPage } currentUser={ props.currentUser } />
-      console.log("hit me with your best shot!")
+      console.log(` hit me with your best shot! ${props}`)
 
     return(
         <div className="container-fluid"> 

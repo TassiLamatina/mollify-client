@@ -24,7 +24,7 @@ export default function Register(props) {
         }
 
         // post registration data to the server
-        const response = await axios.post(`${process.env.REACT_APP_SERVER_URL}/api-v1/users/register`, requestBody)
+        const response = await axios.post(`${process.env.REACT_APP_SERVER_URL}/users/register`, requestBody)
 
         // take the token out of the response 
         const { token } = response.data

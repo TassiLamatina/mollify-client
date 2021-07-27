@@ -1,5 +1,5 @@
 import './App.css';
-import NavigationBar from './components/Navbar.jsx'
+import NavigationBar from './components/NavigationBar.jsx'
 import NewAccount from './components/NewAccount.jsx'
 import LandingPage from './components/LandingPage.jsx'
 import Login from './components/Login.jsx'
