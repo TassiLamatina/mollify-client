@@ -24,7 +24,7 @@ export default function Register(props) {
         }
 
         // post registration data to the server
-        const response = await axios.post(`${process.env.REACT_APP_SERVER_URL}/users/register`, requestBody)
+        const response = await axios.post(`${process.env.REACT_APP_SERVER_URL}/api-v1/users/register `, requestBody)
 
         // take the token out of the response 
         const { token } = response.data
@@ -46,11 +46,11 @@ export default function Register(props) {
             console.log(err)
         }
       }
-    console.log('submit the form! 🌽')
+    // console.log('submit the form! 🌽')
   }
 
   // redirect if the user is logged in
-if(props.currentUser) return <Redirect to='/task' component={ LandingPage } currentUser={ props.currentUser} />
+if(props.currentUser) return <Redirect to='/tasks' component={ LandingPage } currentUser={ props.currentUser} />
 
   return (
       <div>

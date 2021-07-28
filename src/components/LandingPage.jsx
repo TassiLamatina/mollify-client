@@ -102,7 +102,7 @@ export default function LandingPage(props) {
             const response = await axios.post(`${process.env.REACT_APP_SERVER_URL}/api-v1/users/tasks`, {task: newTask}, { headers: authHeaders})
 
             // add to state taskList
-            console.log(response.data)
+            // console.log(response.data)
             setTaskList([...taskList, response.data.task])  
             // update filters and action
             setAction('view')

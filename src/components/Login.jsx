@@ -16,16 +16,16 @@ export default function Login(props) {
     const handleSubmit = async (e) => {
         try {
           e.preventDefault()
-          console.log('do axios call ! 🚀')
+          // console.log('do axios call ! 🚀')
           // post to the backend with axios
           const requestBody = {
             email: email,
             password: password
           }
-          console.log('my server url:', process.env.REACT_APP_SERVER_URL)
+          // console.log('my server url:', process.env.REACT_APP_SERVER_URL)
           const response = await axios.post(`${process.env.REACT_APP_SERVER_URL}/api-v1/users/login `, requestBody)
           
-          console.log(response)
+          // console.log(response)
           // destructure the response
           const { token } = response.data
           
@@ -49,7 +49,7 @@ export default function Login(props) {
       }
     
       if(props.currentUser) return <Redirect to='/tasks' component={ LandingPage } currentUser={ props.currentUser } />
-      console.log(` hit me with your best shot! ${props}`)
+      // console.log(` hit me with your best shot! ${props}`)
 
     return(
         <div className="container-fluid"> 

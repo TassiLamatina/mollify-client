@@ -2,7 +2,7 @@ import { Nav } from 'react-bootstrap'
 
 export default function Menu(props) {
     // set which link is selected 
-    console.log(props)
+    // console.log(props)
     let key
     if (props.filter === null) {
         key = 'show-all'
