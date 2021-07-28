@@ -1,38 +1,277 @@
-.App {
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+#sign-in {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.form-label{
+  font-weight: 700;
+}
+
+input.sign-in-submit {
+  border-radius: 60px;
+  background-color: #8AC76D;
+  padding: 8px 40px; 
+  border: none;
+  color: #000;
+  font-size: 22px;
+}
+
+input.sign-in-submit:hover {
+  color: #F3F5EF;
+}
+
+#account-register {
+  border-radius: 60px;
+  background-color: #8AC76D;
+  padding: 8px 20px; 
+  border: none;
+  color: #000;
+  font-size: 18px;
+}
+#account-register:hover {
+  color: #F3F5EF;
+}
+
+.register-form {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.register-col p {
+  font-size: 24px;
+  font-weight: 500;
+}
+.register-col a {
+  font-size: 16px;
+  text-decoration: none;
+  color: inherit; 
+} 
+.register-col a .login {
+  font-size: 18px;
+}
+
+.navbar {
+  padding: 10px 25px;
+  background-color: #a8c69f;
+  color: #F3F5EF;
+  font-size: 18px;
+}
+
+.navbar a {
+  color: inherit;
+  text-decoration: none;
+}
+.navbar a:hover {
+  color: #000;
+}
+
+.navbar p {
+  margin-bottom: .5rem;
+}
+
+#mollify {
+  color: F3F5EF;
+  font-weight: bold;
+  font-size: 64px;
+  font-family: 'Poppins', sans-serif;
+}
+#LandingPage {
+  padding-top: 40px;
+  background-color: #e9f2d7;
+}
+
+.create-btn{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#taskCards {
+  margin-top: 65px;
+}
+#taskCards ul {
+ padding-left: 0;
+}
+
+#taskDetail {
+  margin-top: 65px;
+  padding-left: 110px;
+
+}
+
+#taskDetail h4{
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+/* .start-date, .apply-date {
+  text-align: center;
+} */
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.user {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: flex-end;
+} 
+.icon {
+  display: flex;
+  justify-content: flex-end;
+}
+.logout {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#calendar {
+  font-weight: bold;
+}
+
+#menuLand {
+  margin: 0;
+} 
+
+#createbtn {
+  background-color: #8AC76D;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 60px;
+  border:none;
+  color: #000;
+}
+#createbtn:hover {
+  background-color: #a4e386;
+  color: #F3F5EF;
+}
+
+#updateCard, #createCard {
+  background-color: #8AC76D;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 60px;
+  border: none;
+  color: #000;
+  font-size: 18px;
+  letter-spacing: 0.06em;
+}
+#updateCard:hover, #createCard:hover {
+background-color: #a4e386;
+  color: #F3F5EF;
+}
+
+#menu {
+  background-color: #a8c69f;
+  padding-top: 10px;
+  height: 80vh;
+  text-align: right;
+  margin-top: 35px; 
+
+  margin-right: 15px;
+  color:#F3F5EF; 
+}
+#menu a{
+  color: F3F5EF !important;
+  }
+
+.menuTitle {
+  text-align: center;
+}
+
+#taskFilterBtn {
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-top: 25px;
 }
 
-.App-link {
-  color: #61dafb;
+#menubar1 {
+  justify-content: flex-end;
+  height: 48.67px;
+  color: #F3F5EF;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+#menubar1 a.active {
+  background: #a8c69f;
+  border: 2px solid #e9f2d7;
+  color: #F3F5EF;
+}
+
+#LandingPageBody {
+  margin-top: 30px;
+}
+
+.detailBox {
+  background-color: #F3F5EF;
+  border-radius: 28px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 15px 20px;
+}
+.newTask {
+  margin-bottom: 10px;
+}
+
+.updateCardBtn {
+  background-color: #8AC76D;
+  color: #000;
+  border:none;
+  border-radius: 28px;
+}
+.updateCardBtn:hover {
+  background-color: #9bdb7d;
+  color:#F3F5EF;
+}
+#deleteCard {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 60px;
+  font-size: 18px;
+  letter-spacing: 0.06em;
+}
+
+#row {
+  flex-grow: 1;
+  justify-content: center;
+}
+
+ul {
+  list-style-type:none;
+}
+
+#tasktiles {
+  background: #F3F5EF;
+  border: 2px solid #a8c69f;
+  box-sizing: border-box;
+  box-shadow: 0px 12px 0px #a8c69f;
+  border-radius: 17.5381px;
+  height: 102px;
+  width: 294px;
+}
+
+#taskDetail .form-control {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 28px;
+  background-color: #F3F5EF;
+}
+.fieldbkg {
+  background-color: #F3F5EF;
+}
+
+
+/**** MEDIA QUERY LEAVE AT BOTTOM ****/
+/* @media (max-width: 768px) {
+  .row {
+    height: 1134px !important;
   }
-  to {
-    transform: rotate(360deg);
+  .splash {
+    background-size: cover !important;
+  }
+  span#clambr {
+    font-size: 3rem;
+    display: block; 
+  }
+  .user-col {
+    flex-direction: column;
+  }
+  .user-col p {
+    display: none;
+  }
+  .navbar p {
+    padding-right: 0;
   }
 }
+ */

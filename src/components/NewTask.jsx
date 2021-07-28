@@ -22,7 +22,7 @@ export default function NewTask(props) {
 
             <div className="apply-date">
                 <label className="mb-1 px-1"id="calendar" htmlFor="added">Added on:</label>
-                <input className="mb-2" type="date" id="added" name="added"
+                <input className="mb-2" type="date" id="fieldbkg" name="added"
                     value={props.dateAdded} onChange={(e) => props.setDateAdded(e.target.value)} 
                     min="2018-01-01" max="2035-12-31"/>  
             </div>        
