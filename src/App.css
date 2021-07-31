@@ -1,10 +1,33 @@
+
+
 body {
-  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.5;
+  color: #212529;
+  background-image: url("https://images.unsplash.com/photo-1503149779833-1de50ebe5f8a?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dHJvcGljYWwlMjBsZWF2ZXN8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80");
+  background-repeat: no-repeat, repeat;
+  background-size: cover;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  text-align: center;
+}
+
+#sign-in-container {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 50%;
 }
 
 #sign-in {
   width: 90%;
   margin: 0 auto;
+  
 }
 
 .form-label{
@@ -74,14 +97,14 @@ input.sign-in-submit:hover {
 }
 
 #mollify {
-  color: F3F5EF;
-  font-weight: bold;
+  color: #FFFFFF;
+  /* font-weight: bold; */
   font-size: 64px;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Fira Code', monospace;
 }
 #LandingPage {
   padding-top: 40px;
-  background-color: #e9f2d7;
+  background-color: #D5E4C0;
 }
 
 .create-btn{
@@ -234,10 +257,10 @@ ul {
 
 #tasktiles {
   background: #F3F5EF;
-  border: 2px solid #a8c69f;
+  border: none;
   box-sizing: border-box;
-  box-shadow: 0px 12px 0px #a8c69f;
-  border-radius: 17.5381px;
+  /* box-shadow: 0px 6px 0px black; */
+  border-radius: 16px;
   height: 102px;
   width: 294px;
 }
@@ -250,28 +273,3 @@ ul {
 .fieldbkg {
   background-color: #F3F5EF;
 }
-
-
-/**** MEDIA QUERY LEAVE AT BOTTOM ****/
-/* @media (max-width: 768px) {
-  .row {
-    height: 1134px !important;
-  }
-  .splash {
-    background-size: cover !important;
-  }
-  span#clambr {
-    font-size: 3rem;
-    display: block; 
-  }
-  .user-col {
-    flex-direction: column;
-  }
-  .user-col p {
-    display: none;
-  }
-  .navbar p {
-    padding-right: 0;
-  }
-}
- */

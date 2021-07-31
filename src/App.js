@@ -1,4 +1,5 @@
 import './App.css';
+import "bootswatch/dist/lux/bootstrap.min.css";
 import NavigationBar from './components/NavigationBar.jsx'
 import NewAccount from './components/NewAccount.jsx'
 import LandingPage from './components/LandingPage.jsx'
@@ -47,31 +48,33 @@ function App() {
   }
 
   return (
-    <Router>
-      <header>
-        <NavigationBar  currentUser={ currentUser } handleLogout={ handleLogout }/>
-      </header>
+    <div >
+      <Router>
+        <header>
+          <NavigationBar  currentUser={ currentUser } handleLogout={ handleLogout }/>
+        </header>
 
-      <div className="App">
-        <Switch>
-          <Route 
-            exact path="/"
-            render={ props => <Login {...props} currentUser={ currentUser } setCurrentUser={ setCurrentUser }/> }
-          />
+        <div className="App">
+          <Switch>
+            <Route 
+              exact path="/"
+              render={ props => <Login {...props} currentUser={ currentUser } setCurrentUser={ setCurrentUser }/> }
+            />
 
-          <Route 
-            path="/register"
-            render={ props => <NewAccount {...props} currentUser={ currentUser } setCurrentUser={ setCurrentUser }/> }
-          />
+            <Route 
+              path="/register"
+              render={ props => <NewAccount {...props} currentUser={ currentUser } setCurrentUser={ setCurrentUser }/> }
+            />
 
-          {/* conditionally render a redirect for auth locked routes */}
-          <Route 
-            path="/tasks"
-            render={ props => currentUser ? <LandingPage {...props} currentUser={ currentUser } handleLogout={ handleLogout }/> : <Redirect to="/" />}
-          />
-        </Switch>
-      </div>
-    </Router>
+            {/* conditionally render a redirect for auth locked routes */}
+            <Route 
+              path="/tasks"
+              render={ props => currentUser ? <LandingPage {...props} currentUser={ currentUser } handleLogout={ handleLogout }/> : <Redirect to="/" />}
+            />
+          </Switch>
+        </div>
+      </Router>
+    </div>
   );
 }
 

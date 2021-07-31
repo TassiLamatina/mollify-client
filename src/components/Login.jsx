@@ -52,11 +52,11 @@ export default function Login(props) {
       // console.log(` hit me with your best shot! ${props}`)
 
     return(
-        <div className="container-fluid"> 
-            <div className="row">
-                <div className="">
+        <div className="list-group-item list-group-item-action flex-column align-items-start" id="sign-in-container"> 
+            <div className="d-flex w-100 justify-content-between">
+                <div className="container">
                     <form onSubmit={handleSubmit} id="sign-in">
-                        <div className="">
+                        <div className="horizontal-center vertical-center">
                             <label className="form-label">SIGN IN:</label>
                             <input onChange={e => setEmail(e.target.value) } className="form-control" value={email} type="text" name="username" placeholder="email"/>
                         </div>
